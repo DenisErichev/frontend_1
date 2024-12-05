@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фронт 1.0</title>
+    <title>Фронт 2.0</title>
 </head>
 <body>
-    <h1>Фронт 1.0</h1>
-    <form action="/submit" method="POST">
-        <label for="text">Введите текст:</label>
-        <input type="text" id="text" name="text">
+    <h1>Фронт 2.0</h1>
+
+    <form action="/submit1" method="POST">
+        <label for="data">Введите текст:</label>
+        <input type="text" id="data" name="data" required>
         <button type="submit">Отправить</button>
     </form>
+
+    <form action="/submit2" method="GET">
+        <button type="submit">Запросить данные из файла</button>
+    </form>
+
+    {% if file_content is not none %}
+        <p>{{ file_content }}</p>
+    {% endif %}
 </body>
 </html>
+
